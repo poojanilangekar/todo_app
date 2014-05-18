@@ -1,0 +1,14 @@
+<% provide(:title, 'Home') %>
+<title> TODO | <%= yield(:title) %> </title>
+<div class="center hero-unit">
+  <h1>Welcome to the todo app</h1>
+
+  <h2>
+    This the home page for a rails application to manage todo lists of users.
+  </h2>
+   <%= image_tag("todoimg.jpg", alt: "Todo", :align=> "center" )  %>
+
+  <%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %>
+</div>
+
+
