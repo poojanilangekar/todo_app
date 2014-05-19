@@ -60,6 +60,7 @@ gem 'therubyracer', :platforms => :ruby
 gem 'execjs'
 
 gem 'minitest'
+gem 'debugger-ruby_core_source'
 
 gem 'will_paginate', '3.0.4'
 

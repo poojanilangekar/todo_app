@@ -1,14 +1,14 @@
-
-<%= form_tag("/tasks/complete/", :method => "post") do %>
 <ul style="list-style-type:none;">
-<% @task_items.each do |t| %>
-<% if current_user?(t.user) %>
-   <% if t.completed == true %>
-     <li style="color:grey;"> <%= check_box_tag  "tasks_checkbox[]",t.id %>  <strike><%= t.content %></strike> </li>
-  <% else %>
-     <li> <%= check_box_tag  "tasks_checkbox[]",t.id %> <%= t.content %>  </li>
+  <% @task_items.each do |t| %>
+  <% if current_user?(t.user) %>
+  	<%= render :partial => "shared/task_entry", :locals => {:t => t} %>
   <% end %>
 <% end %>
-<% end %>
-<%= submit_tag("Complete Tasks", :class=>"btn btn-success") %>
-<% end %>
+
+<style type="text/css">
+.completed{
+   color: grey;
+   text-decoration: line-through;
+ }
+</style>
+

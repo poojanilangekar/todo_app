@@ -28,3 +28,9 @@
   <%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %>
 </div>
 <% end %>
+<script type="text/javascript">
+  jQuery(document).on("change", ".task_checkbox_class", function(){
+    var taskId = jQuery(this).attr('value');    
+    jQuery.post("/tasks/complete", {task_id: taskId});    
+  });
+</script>

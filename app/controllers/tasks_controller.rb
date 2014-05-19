@@ -19,17 +19,17 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to root_url
   end
+
   def complete
-    params[:tasks_checkbox].each do |check|
-       task_id = check
-       t = Task.find_by_id(task_id)
-       t.update_attribute(:completed, true)
-     end
-    redirect_to root_url
- end
+    task_id = params[:task_id]
+    @task = Task.find_by_id(task_id)
+    @task.update_attribute(:completed, !@task.completed)
+  end
+
   private 
-    def task_params
-      params.require(:task).permit(:content, :completed)
-    end 
+  
+  def task_params
+    params.require(:task).permit(:content, :completed)
+  end 
 
 end

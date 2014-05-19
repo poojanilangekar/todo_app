@@ -54,6 +54,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    debugger-ruby_core_source (1.3.4)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -220,6 +221,7 @@ DEPENDENCIES
   capybara (= 2.1.0)
   childprocess
   coffee-rails (~> 4.0.0)
+  debugger-ruby_core_source
   devise
   execjs
   guard-rspec (= 2.5.0)

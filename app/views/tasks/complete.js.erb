@@ -1,0 +1,2 @@
+<% alert_value = render(:partial => "shared/task_entry", :locals => {:t => @task}) %>
+jQuery("#task_<%= @task.id %>").parent().replaceWith("<%= j alert_value %>");
