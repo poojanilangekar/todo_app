@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_filter :correct_user,   only: [:edit, :update]
   def show
     @user = User.find(params[:id])
+    @tasks = @user.tasks.paginate(page: params[:page], per_page: 5)
   end  
   def new
     @user = User.new

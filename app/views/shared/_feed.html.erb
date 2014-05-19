@@ -1,0 +1,15 @@
+<%= form_tag("/tasks/complete/", :method => "post") do %>
+<ul style="list-style-type:none;">
+
+<% @tasks.each do |t| %>
+<% if current_user?(t.user) %>
+
+   <% if t.completed == true %>
+     <li style="color:grey;"> <%= check_box_tag  "tasks_checkbox[]",t.id %>  <strike><%= t.content %></strike> </li>
+  <% else %>
+     <li> <%= check_box_tag  "tasks_checkbox[]",t.id %> <%= t.content %>  </li>
+  <% end %>
+<% end %>
+<% end %>
+<%= submit_tag("Complete Tasks", :class=>"btn btn-success") %>
+<% end %>

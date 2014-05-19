@@ -61,4 +61,5 @@ gem 'execjs'
 
 gem 'minitest'
 
+gem 'will_paginate', '3.0.4'
 

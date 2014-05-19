@@ -1,5 +1,22 @@
 <% provide(:title, 'Home') %>
 <title> TODO | <%= yield(:title) %> </title>
+
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/task_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Your Tasks</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>  
+<% else %>
 <div class="center hero-unit">
   <h1>Welcome to the todo app</h1>
 
@@ -10,5 +27,4 @@
 
   <%= link_to "Sign up now!", new_user_path, class: "btn btn-large btn-primary" %>
 </div>
-
-
+<% end %>
