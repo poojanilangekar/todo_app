@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   def home
-    @task = current_user.tasks.build if signed_in?
+    if signed_in?
+      @task = current_user.tasks.build 
+      @task_items = current_user.tasks
+    end
   end
   def about
   end

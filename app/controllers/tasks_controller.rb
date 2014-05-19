@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_filter :signed_in_user, only: [:create, :destroy]
+  before_filter :signed_in_user, only: [:create, :destroy, :complete]
   
   def index
   end

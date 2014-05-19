@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy] 
-  resources :tasks, only: [:create, :destroy]
+  resources :tasks 
   root to: 'static_pages#home'
   match '/', to: 'static_pages#home', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get' 

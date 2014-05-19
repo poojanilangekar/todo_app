@@ -1,9 +1,8 @@
+
 <%= form_tag("/tasks/complete/", :method => "post") do %>
 <ul style="list-style-type:none;">
-
-<% @tasks.each do |t| %>
+<% @task_items.each do |t| %>
 <% if current_user?(t.user) %>
-
    <% if t.completed == true %>
      <li style="color:grey;"> <%= check_box_tag  "tasks_checkbox[]",t.id %>  <strike><%= t.content %></strike> </li>
   <% else %>
