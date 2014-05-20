@@ -2,14 +2,19 @@
 <title> TODO | <%= yield(:title) %> </title>
 
 <% if signed_in? %>
-  <div class="row">
+<div class="row">
     <aside class="span4">
       <section>
         <%= render 'shared/user_info' %>
       </section>
       <section>
+        <%= render 'shared/todolist_form' %>
+      </section>
+      <% if current_user.todolists.any? %>
+      <section>
         <%= render 'shared/task_form' %>
       </section>
+      <% end %>
     </aside>
     <div class="span8">
       <h3>Your Tasks</h3>

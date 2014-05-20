@@ -8,5 +8,9 @@
   <%= link_to "view my profile", current_user %>
 </span>
 <span>
+  <%= pluralize(current_user.todolists.count, "todolist") %>
+</span>
+<span>
   <%= pluralize(current_user.tasks.count, "task") %>
 </span>
+

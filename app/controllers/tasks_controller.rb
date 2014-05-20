@@ -26,10 +26,10 @@ class TasksController < ApplicationController
     @task.update_attribute(:completed, !@task.completed)
   end
 
-  private 
+private 
   
   def task_params
-    params.require(:task).permit(:content, :completed)
+    params.require(:task).permit(:content, :completed, :todolist_id)
   end 
 
 end

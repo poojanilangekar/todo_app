@@ -1,7 +1,7 @@
 
 <title> TODO | <%= @user.name %> </title> 
 <div class="row">
-  <aside class="span4">
+  <aside class="span8">
     <section>
       <% if current_user?(@user) %>
       <h1> Hello, 
@@ -16,18 +16,17 @@
       <% end %>
     </section>
   </aside>
-  <div class="span8">
-    <% if @user.tasks.any? %>
-      <% if current_user?(@user) %>
-        <h3>Your Tasks (<%= @user.tasks.count %>)</h3>
+</div>
+<div class="row">
+  <% if @user.todolists.any? %>
+    <% if current_user?(@user) %>
+        <h3>Your Todolists and Tasks </h3>
       <% else %>
-        <h3> <%= @user.name %>'s Tasks </h3>
+        <h3> <%= @user.name %>'s Todo lists and Tasks </h3>
       <% end %>
-      <ol class="tasks">
-        <%= render @tasks %>
-      </ol>
-      <%= will_paginate @tasks %>
+    <ol class="todolists">
+        <%= render @todolists %>
+    </ol>
+    <%= will_paginate @todolists %>
     <% end %>
   </div>
-</div>
-
