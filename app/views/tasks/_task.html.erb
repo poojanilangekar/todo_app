@@ -1,9 +1,15 @@
 <li>
-  <span class="content"><%= task.content %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(task.created_at) %> ago.
-  </span>
-    <%= link_to "delete", task, method: :delete,
+	<% if task.completed %>
+		<span class="content"> <strike> ✓ <%= task.content %> </strike> </span>
+	<% else %>
+		<span class="content"><%= task.content %></span>
+	<% end %>
+  	<span class="timestamp">
+    		Posted <%= time_ago_in_words(task.created_at) %> ago.
+  	</span>
+  	<% if current_user?(task.user) %>
+    	<%= link_to "delete", task, method: :delete,
                                      data: { confirm: "Are you sure?" },
                                      title: task.content %>
+  	<% end %>
 </li>
