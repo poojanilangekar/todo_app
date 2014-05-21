@@ -5,7 +5,8 @@
     <%= f.label :todolist_id, "Todo list" %>
    
    <%= f.select(:todolist_id, options_for_select(@todolist_items.collect {|p| [ p.name, p.id ]},"Select todolist"),:selected =>f.object.todolist_id, :class => "span3") %>
-
+   <%= f.label :completeby, "Complete By" %>
+   <%= f.date_select :completeby, :prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }  %>
   </div>
   <%= f.submit "Add", class: "btn btn-large btn-primary" %>
 <% end %>

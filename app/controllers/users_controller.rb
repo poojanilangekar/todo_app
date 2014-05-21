@@ -48,6 +48,7 @@ class UsersController < ApplicationController
       @user.password = params[:user][:password]
       @user.password_confirmation = params[:user][:password_confirmation]
       if @user.changed? && @user.save
+        flash[:success] = "Password updated!"
         redirect_to @user
       else
         render :action => "change_password"

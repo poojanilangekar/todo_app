@@ -1,3 +1,3 @@
 <% class_name = "task_entry" %>
 <% class_name += " completed" if t.completed %>
-<li class="<%= class_name%>"> <%= check_box_tag  "tasks_checkbox[]",t.id, t.completed, {:class => "task_checkbox_class", :id => "task_#{t.id}"} %> <%= t.content %>  </li>
+<li class="<%= class_name%>"> <%= check_box_tag  "tasks_checkbox[]",t.id, t.completed, {:class => "task_checkbox_class", :id => "task_#{t.id}"} %> <%= t.content %> : <%= t.completeby %> </li>

@@ -2,8 +2,12 @@
 	<% if task.completed %>
 		<span class="content"> <strike> ✓ <%= task.content %> </strike> </span>
 	<% else %>
-		<span class="content"><%= task.content %></span>
-	<% end %>
+    <% if task.completeby >= Date.today %>
+		<span class="content"><font color ="green"><%= task.content %> : <%= task.completeby %> </font> </span>
+    <% else %>
+    <span class="content"><font color ="red"><%= task.content %> : <%= task.completeby %> </font> </span>
+  <% end %> 	
+  <% end %>
     <span class="timestamp">
         Posted <%= time_ago_in_words(task.created_at) %> ago.
   	</span>

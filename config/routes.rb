@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
   match '/tasks/complete', to: 'tasks#complete', via: 'post' 
-  match '/users/:id/change_password', to: 'users#change_password', via: 'post' 
+  match '/users/:id/change_password', to: 'users#change_password', via: 'get' 
 end 

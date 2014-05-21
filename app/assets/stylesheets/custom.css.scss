@@ -44,6 +44,17 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+select {
+  width: 220px;
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+}
+
+select.date-select {
+    width:auto;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
 
 #logo {
   float: left;
