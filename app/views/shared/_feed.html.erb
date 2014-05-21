@@ -1,7 +1,12 @@
 <ul style="list-style-type:none;">
-  <% @task_items.each do |t| %>
-  <% if current_user?(t.user) %>
-  	<%= render :partial => "shared/task_entry", :locals => {:t => t} %>
+  <% @todolist_items.each do |p| %>
+  <% if current_user?(p.user) %>
+  	<div class="row"> 
+  		<h4> <%= p.name %> </h4> 
+  	</div>
+  	<% p.tasks.each do |t| %> 
+  		<%= render :partial => "shared/task_entry", :locals => {:t => t} %>
+  	<% end %> 
   <% end %>
 <% end %>
 
