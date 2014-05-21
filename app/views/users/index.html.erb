@@ -7,10 +7,15 @@
     <li>
       <%= gravatar_for user %>
       <%= link_to user.name, user %>
+      <% if user.todolists.any? %>
+       <p> (<%= user.todolists.count %>) Todolists </p>
+      <% else %>
+        <p> 0 Todolists </p>
+      <% end %>
       <% if user.tasks.any? %>
        <p> (<%= user.tasks.count %>) Tasks </p>
       <% else %>
-      	<p> 0 Tasks </p>
+        <p> 0 Tasks </p>
       <% end %>
     </li>
   <% end %>

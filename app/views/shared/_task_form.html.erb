@@ -3,8 +3,8 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new task..." %>
     <%= f.label :todolist_id, "Todo list" %>
-    <%= f.collection_select :todolist_id, @todolist_items, :id, :name %>
-
+   
+   <%= f.select(:todolist_id, options_for_select(@todolist_items.collect {|p| [ p.name, p.id ]},"Select todolist"),:selected =>f.object.todolist_id, :class => "span3") %>
 
   </div>
   <%= f.submit "Add", class: "btn btn-large btn-primary" %>
